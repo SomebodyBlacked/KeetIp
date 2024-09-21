@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get.dart';
+import 'package:myapp/editor_screen.dart';
 
 void main() {
   return runApp(const MyApp());
@@ -19,6 +20,12 @@ class MyApp extends StatelessWidget {
         ),
         body: const Center(
           child: Text('Hello World'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Get.to(const EditorScreen());
+          },
+          child: const Icon(Icons.navigate_next),
         ),
       ),
     );
