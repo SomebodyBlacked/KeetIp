@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Get.to(const EditorScreen());
+            Get.to(EditorScreen());
           },
-          child: const Icon(Icons.navigate_next),
+          child: const Icon(Icons.edit),
         ),
       ),
     );
