@@ -12,19 +12,61 @@ class EditorScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Editor'),
       ),
-      body: Column(
-        children: [
-          QuillSimpleToolbar(
-            controller: _controller,
-            configurations: const QuillSimpleToolbarConfigurations(),
-          ),
-          Expanded(
-            child: QuillEditor.basic(
-              controller: _controller,
-              configurations: const QuillEditorConfigurations(),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Expanded(
+              child: QuillEditor.basic(
+                controller: _controller,
+                configurations: const QuillEditorConfigurations(),
+              ),
             ),
-          ),
-        ],
+            QuillSimpleToolbar(
+              controller: _controller,
+              configurations: const QuillSimpleToolbarConfigurations(
+                // true
+                showBoldButton: true,
+                showItalicButton: true,
+                showUnderLineButton: true,
+                showUndo: true,
+                showRedo: true,
+
+                // false
+                showSearchButton: false,
+                showBackgroundColorButton: false,
+                showAlignmentButtons: false,
+                showLeftAlignment: false,
+                showRightAlignment: false,
+                showCenterAlignment: false,
+                showHeaderStyle: false,
+                showFontFamily: false,
+                showFontSize: false,
+                showCodeBlock: false,
+                showClearFormat: false,
+                showClipboardCopy: false,
+                showClipboardCut: false,
+                showClipboardPaste: false,
+                showColorButton: false,
+                showDirection: false,
+                showDividers: false,
+                showIndent: false,
+                showInlineCode: false,
+                showJustifyAlignment: false,
+                showLineHeightButton: false,
+                showLink: false,
+                showListBullets: false,
+                showListCheck: false,
+                showListNumbers: false,
+                showQuote: false,
+                showSmallButton: false,
+                showStrikeThrough: false,
+                showSubscript: false,
+                showSuperscript: false,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
