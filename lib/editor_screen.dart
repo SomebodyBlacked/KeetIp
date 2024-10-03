@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 
@@ -6,11 +8,25 @@ class EditorScreen extends StatelessWidget {
 
   final QuillController _controller = QuillController.basic();
 
+  Future<void> _saveDocument() async {
+    final json = _controller.document.toDelta().toJson();
+    print(json);
+    print("aweeawew");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Editor'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              _saveDocument();
+            },
+            icon: const Icon(Icons.save),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
