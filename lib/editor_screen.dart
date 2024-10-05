@@ -11,7 +11,6 @@ class EditorScreen extends StatelessWidget {
   Future<void> _saveDocument() async {
     final json = _controller.document.toDelta().toJson();
     print(json);
-    print("aweeawew");
   }
 
   @override
